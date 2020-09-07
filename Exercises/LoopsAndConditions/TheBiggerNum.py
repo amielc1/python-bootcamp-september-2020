@@ -7,4 +7,4 @@ def the_bigger_number(list_of_numbers):
                 big = num
         except ValueError:
             raise ValueError(f"{num} is not a number")
-    return  big
+    return big
