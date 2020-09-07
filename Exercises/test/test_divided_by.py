@@ -1,20 +1,31 @@
 import unittest
 from DividedBy import *
+from random import randint
 
-divided_list = [7.0, 13, 15]
-divided_list_not_a_numbers = [7, 13, 15, "ff"]
 
+genetated_list = []
 
 class DividedByTest(unittest.TestCase):
 
+    def grnetate_random_list(self,len=5):
+        for _ in range(len):
+            num1 = randint(1, 100)
+            genetated_list.append(num1)
+
+    def setUp(self):
+        genetated_list.clear()
+        self.grnetate_random_list()
+
     def test_divided_by_pass(self):
-        self.assertTrue(divided_by(get_common_divided(divided_list), divided_list))
+        self.assertTrue(divided_by(get_common_divided(genetated_list), genetated_list))
 
     def test_divided_by_fail(self):
-        self.assertFalse(divided_by(get_common_divided(divided_list) - 1, divided_list))
+        self.assertFalse(divided_by(get_common_divided(genetated_list) - 1, genetated_list))
 
     def test_divided_by_not_a_number_raise_exception(self):
-        self.assertRaises(TypeError, divided_by, get_common_divided(divided_list), divided_list_not_a_numbers)
+        common_divided=get_common_divided(genetated_list)
+        genetated_list[len(genetated_list)-1] = "ff"
+        self.assertRaises(TypeError, divided_by, common_divided, genetated_list)
 
     def test_divided_by_not_a_number_raise_exception2(self):
-        self.assertRaises(TypeError, divided_by, "f3", divided_list)
+        self.assertRaises(TypeError, divided_by, "f3", genetated_list)
