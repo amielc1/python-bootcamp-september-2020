@@ -22,11 +22,5 @@ class DividedByTest(unittest.TestCase):
     def test_divided_by_fail(self):
         self.assertFalse(divided_by(get_common_divided(genetated_list) - 1, genetated_list))
 
-    def test_divided_by_not_a_number_raise_exception(self):
-        common_divided = get_common_divided(genetated_list)
-        genetated_list[len(genetated_list) - 1] = "ff"
-        divided_by(common_divided, genetated_list)
-        self.assertRaises(Exception, divided_by, common_divided, genetated_list)
-
     def test_divided_by_not_a_number_raise_exception2(self):
         self.assertRaises(TypeError, divided_by, "f3", genetated_list)

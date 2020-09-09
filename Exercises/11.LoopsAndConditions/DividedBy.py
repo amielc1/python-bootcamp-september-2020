@@ -8,8 +8,7 @@ def divided_by(input_num: Nums, input_numbers: List[Nums]) -> bool:
     for num in input_numbers:
         if not divmod(input_num, num)[1] == 0:
             return False
-        else:
-            return True
+    return True
 
     # for num in input_numbers:
     #     try:
