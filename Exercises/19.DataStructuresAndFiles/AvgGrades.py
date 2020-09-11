@@ -1,7 +1,12 @@
 import sys
 from statistics import mean
 
-grades = [int(n) for n in sys.argv[1:]]
-avrg = mean(grades)
-res = [n for n in grades if n > avrg]
-print(res)
+
+def get_above_average_grades(input_grads: list) -> list:
+    grades = [int(n) for n in input_grads]
+    average = mean(grades)
+    above_average = [n for n in grades if n > average]
+    return above_average
+
+
+print(get_above_average_grades(sys.argv[1:]))
