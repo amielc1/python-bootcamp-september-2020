@@ -2,6 +2,7 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Exercises" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Exercises/11.LoopsAndConditions" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Exercises/19.DataStructuresAndFiles" isTestSource="false" />
     </content>
