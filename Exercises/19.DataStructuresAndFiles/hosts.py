@@ -16,3 +16,13 @@ def get_Computer_names(computer_nuames_list: list, hosts_dic: dict):
 
 hsots = parse_file('hosts.txt')
 names = get_Computer_names(['work', 'amiel', 'home'], hsots)
+
+"""
+Uri's comments:
+==============
+
+* You didn't get the input from the command line.
+* In Python it's common to use function names in lowercase. You can use "_" to separate between words.
+  For example, use "get_computer_names" instead of "get_Computer_names".
+
+"""

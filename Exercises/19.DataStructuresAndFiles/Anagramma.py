@@ -26,3 +26,13 @@ def foo(ang_dict):
 
 
 foo(anagrams_dics)
+
+"""
+Uri's comments:
+==============
+
+* The output is not what the assignment expects.
+* I didn't understand why you printed 6 cycles.
+* It's better to give function names and not just "foo".
+
+"""
