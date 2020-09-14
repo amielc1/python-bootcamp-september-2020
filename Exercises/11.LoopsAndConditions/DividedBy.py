@@ -22,3 +22,13 @@ def divided_by(input_num: Nums, input_numbers: List[Nums]) -> bool:
 
 def get_common_divided(list):
     return math.prod(list)
+
+
+"""
+Uri's comments:
+==============
+
+* In Python it's common to use variable names in lowercase. You can use "_" to separate between words.
+  For example, use "nums" instead of "Nums".
+
+"""
