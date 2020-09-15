@@ -4,9 +4,13 @@ from flask import Flask, request, render_template
 app = Flask('Amiel GUI website')
 
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def index():
-    return render_template('index.html', name='Amiel Cohen')
+    if 'name' in request.values:
+        name = request.values['name']
+    else:
+        name = "Please enter your name"
+    return render_template('index.html', name=name)
 
 
 if __name__ == '__main__':
