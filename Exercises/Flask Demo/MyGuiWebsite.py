@@ -14,8 +14,15 @@ connection_details = {
 def check_user_correction(user, password):
     return user in connection_details and connection_details[user] == password
 
+@app.route('/anagrams')
+def new_anagrams():
+    return render_template('anagrams.html')
 
-# , methods=['POST', 'GET']
+@app.route('/show_anagrams', methods=['POST'])
+def show_anagrams():
+    words = request.values["words"]
+    return render_template('show_words.html')
+
 @app.route('/')
 def index():
     result = ""
