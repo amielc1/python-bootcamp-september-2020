@@ -15,4 +15,5 @@ while True:
     password_input = input("Enter Password")
     if check_user_correction(username_input, password_input):
         print("---->>Welcome Master")
-    print("INTRUDER ALERT")
+    else:
+        print("INTRUDER ALERT")
