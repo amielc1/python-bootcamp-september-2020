@@ -27,6 +27,28 @@ def fuel_required_for_list(mass_list):
     return counter
 
 
+def get_total_fuel(mass):
+    total_fuel = 0
+    fuel_result = 0
+    fuel_result = fuel_required(mass)
+    while fuel_result > 0:
+        total_fuel += fuel_result
+        fuel_result = fuel_required(fuel_result)
+    return total_fuel
+
+
+# mass 1969 is 654 + 216 + 70 + 21 + 5 = 966.
+get_total_fuel(100756)
+
+# mass_list = get_mass_from_file()
+# fuel = fuel_required_for_list(mass_list)
+# print(fuel)
+
+
 mass_list = get_mass_from_file()
-fuel = fuel_required_for_list(mass_list)
-print(fuel)
+total_fuel_list = list(map(lambda x: get_total_fuel(x), mass_list))
+print(sum(total_fuel_list))
+total = 0
+for m in mass_list:
+    total += get_total_fuel(m)
+print(total)
