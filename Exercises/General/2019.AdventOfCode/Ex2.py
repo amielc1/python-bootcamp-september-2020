@@ -36,12 +36,19 @@ class Command():
 
 print(map_list)
 
-last = 0
-index = 4
-while index < len(map_list):
-    cmd = Command(map_list[last:index], map_list)
-    cmd.colculate_commnad()
-    last = index
-    index += 4
+# last = 0
+# index = 4
+# while index < len(map_list):
+#     cmd = Command(map_list[last:index], map_list)
+#     cmd.colculate_commnad()
+#     last = index
+#     index += 4
+#
+
+for i in range(0, len(map_list), 4):
+    slice = map_list[i:i + 4]
+    if len(slice) == 4:
+        cmd = Command(slice, map_list)
+        cmd.colculate_commnad()
 
 print(map_list)
