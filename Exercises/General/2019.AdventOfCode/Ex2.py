@@ -52,3 +52,4 @@ for i in range(0, len(map_list), 4):
         cmd.colculate_commnad()
 
 print(map_list)
+print("4138658")
