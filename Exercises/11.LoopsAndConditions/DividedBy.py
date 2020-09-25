@@ -19,6 +19,5 @@ def divided_by(input_num: Nums, input_numbers: List[Nums]) -> bool:
     #         raise TypeError(f"either {input_num} or {num} is not a number ")
     # return True
 
-
 def get_common_divided(list):
     return math.prod(list)
