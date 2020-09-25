@@ -1,6 +1,3 @@
-from typing import List
-
-from Board import *
 from ComputerPlayer import *
 from GameLogic import *
 from HumanPlayer import *
@@ -19,16 +16,20 @@ class TheGame:
         return self.players[the_game.step_counter % 2]
 
     def start_game(self):
-        while not self.game_logic.is_win():
+        game_end = False
+        current_player = ""
+        while not game_end:
             current_player = self.next_player()
             print(f"{current_player.name} playing ... ")
             self.bord.print_board()
             step = current_player.next_step()
             self.bord.set_step(current_player.symbol, step)
+            game_end = self.game_logic.is_win(current_player.symbol)
+        print(f"----- Player {current_player.name} Win !!! ")
 
 
-game_logic = GameLogic()
 board = Board(3)
+game_logic = GameLogic(board)
 hp = HumanPlayer("Amiel", 'X', board)
 cp = ComputerPlayer("My Computer", '0', board)
 players = [hp, cp]
