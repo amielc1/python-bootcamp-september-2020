@@ -34,5 +34,10 @@ def index():
     return render_template('index.html', verification_result=result)
 
 
+@app.route('/anagrams')
+def anagrams():
+    return "<h1>I need to resolve it.......</h1>"
+
+
 if __name__ == '__main__':
     app.run()
