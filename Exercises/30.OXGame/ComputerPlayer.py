@@ -10,7 +10,7 @@ class ComputerPlayer(PlayerBase):
 
     def get_random_pos(self) -> tuple:
         max_rand = self.bord.size - 1
-        return (int(random.randint(0, max_rand)), int(random.randint(0, max_rand)))
+        return random.randint(0, max_rand), random.randint(0, max_rand)
 
     def next_step(self) -> Tuple:
         pos = self.get_random_pos()

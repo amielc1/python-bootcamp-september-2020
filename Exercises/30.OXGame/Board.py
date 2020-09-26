@@ -4,13 +4,14 @@ import numpy as np
 
 
 class Board:
-    def clear_board(self):
-        return np.full((self.size, self.size), self.empty_cell)
 
     def __init__(self, size, empty_cell: str = '.'):
         self.size = size
         self.empty_cell = empty_cell
         self.board = self.clear_board()
+
+    def clear_board(self):
+        return np.full((self.size, self.size), self.empty_cell)
 
     def print_board(self):
         print(self.board)

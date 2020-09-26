@@ -1,19 +1,19 @@
+import itertools
+
 from ComputerPlayer import *
 from GameLogic import *
 from HumanPlayer import *
 
 
 class TheGame:
-    step_counter: int = 0
 
     def __init__(self, game_logic: GameLogic, players: List[PlayerBase], bord: Board):
         self.game_logic = game_logic
-        self.players = players
+        self.players = self.players = itertools.cycle(players)
         self.bord = bord
 
     def next_player(self) -> PlayerBase:
-        the_game.step_counter += 1
-        return self.players[the_game.step_counter % 2]
+        return next(self.players)
 
     def start_game(self):
         game_end = False
