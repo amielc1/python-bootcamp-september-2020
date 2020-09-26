@@ -1,5 +1,7 @@
 from PlayerBase import *
+
 BoardPosition = Tuple[int, int]
+
 
 class HumanPlayer(PlayerBase):
     def __init__(self, name: str, symbol: str, board: Board):
