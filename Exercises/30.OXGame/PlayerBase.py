@@ -1,5 +1,7 @@
 from Board import *
 
+BoardPosition = Tuple[int, int]
+
 
 class PlayerBase:
     def __init__(self, name: str, symbol: str, bord: Board):
@@ -7,5 +9,5 @@ class PlayerBase:
         self.symbol = symbol
         self.bord = bord
 
-    def next_step(self) -> Tuple:
+    def next_step(self) -> BoardPosition:
         pass

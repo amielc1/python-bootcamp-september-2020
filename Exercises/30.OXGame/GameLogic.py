@@ -17,4 +17,4 @@ class GameLogic:
         return False
 
     def is_same(self, lst: List, sym: str) -> bool:
-        return len(set(lst)) == 1 and lst[0] is sym
+        return len(set(lst)) == 1 and lst[0] == sym

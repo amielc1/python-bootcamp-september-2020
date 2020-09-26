@@ -2,6 +2,8 @@ from typing import Tuple
 
 import numpy as np
 
+BoardPosition = Tuple[int, int]
+
 
 class Board:
 
@@ -17,10 +19,14 @@ class Board:
         print(self.board)
 
     def set_step(self, symbol: str, pos: Tuple):
-        self.board[pos[0], pos[1]] = symbol
+        if self.is_valid_cell(pos):
+            self.board[pos[0], pos[1]] = symbol
 
-    def is_cell_empty(self, pos: tuple) -> bool:
-        return self.board[pos[0], pos[1]] == self.empty_cell
+    def is_cell_empty(self, pos: BoardPosition) -> bool:
+        return self.cell(pos) == self.empty_cell
+
+    def cell(self, pos: BoardPosition):
+        return self.board[pos[0], pos[1]]
 
     def is_valid_cell(self, pos: tuple) -> bool:
         return 0 <= pos[0] < self.size and 0 <= pos[1] < self.size
@@ -35,9 +41,9 @@ class Board:
         return self.board[:, i]
 
     def get_r_diagonal(self):
-        diag = ([0, 1, 2], [0, 1, 2])
-        return self.board[diag]
+        diagonal = ([0, 1, 2], [0, 1, 2])
+        return self.board[diagonal]
 
     def get_l_diagonal(self):
-        diag = ([0, 1, 2], [2, 1, 0])
-        return self.board[diag]
+        diagonal = ([0, 1, 2], [2, 1, 0])
+        return self.board[diagonal]
