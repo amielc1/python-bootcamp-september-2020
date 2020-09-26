@@ -6,7 +6,13 @@ class HumanPlayer(PlayerBase):
         PlayerBase.__init__(self, name, symbol, board)
 
     def get_cell_from_user(self) -> tuple:
-        tpl = input("Please enter your next step (row,col)").split(',')
+        # I would write:
+        # user_input = input("please enter your next step (row,col)")
+        # pos = [int(i) for i in user_input.split(',')]
+        # return pos
+
+        # Also - input validation would be nice here
+        tpl = input("please enter your next step (row,col)").split(',')
         return int(tpl[0]), int(tpl[1])
 
     def next_step(self) -> Tuple:

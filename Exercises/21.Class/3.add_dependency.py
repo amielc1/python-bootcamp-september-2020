@@ -6,6 +6,8 @@ class Widget:
         self.dependency = []
 
     def add_dependency(self, *widgetes):
+        # Easier to use:
+        # self.dependency += widgets
         for widget in widgetes:
             print(f"{self.name} depend on {widget.name}")
             self.dependency.append(widget)

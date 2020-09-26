@@ -7,14 +7,19 @@ from HumanPlayer import *
 
 
 class TheGame:
+    # Why is this a static variable???
     step_counter: int = 0
 
     def __init__(self, game_logic: GameLogic, players: List[PlayerBase], bord: Board):
         self.game_logic = game_logic
         self.players = players
         self.bord = bord
+        # itertools has a nice way to implement next player:
+        # import itertools
+        # self.players = itertools.cycle(players)
 
     def next_player(self) -> PlayerBase:
+        # return next(self.players)
         the_game.step_counter += 1
         return self.players[the_game.step_counter % 2]
 
