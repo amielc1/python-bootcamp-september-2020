@@ -37,3 +37,12 @@ _all.add_dependency(luke, hansolo, leia, yoda, padme, anakin, obi, darth)
 _all.build()
 # code should print: Han Solo, Padme Amidala, Anakin Skywalker, Leia, Yoda, Luke, Obi-Wan, Darth Vader
 # (can print with newlines in between modules)
+
+"""
+Uri's comments:
+==============
+
+* Your code prints many lines and not what the assignment expects.
+* Typo in "widgetes".
+ 
+"""
